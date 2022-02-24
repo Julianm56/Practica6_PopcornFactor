@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_BackGround"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="451dp"
+        android:src="@drawable/popcorn"
+        android:scaleX="1.5"
+        android:layout_marginRight="19dp"
+        android:layout_marginLeft="-40dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/main_Letra"
+        android:text="@string/welcome_text"
+        android:textAlignment="textStart"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <Button
+        android:id="@+id/button_get_started"
+        android:layout_width="237dp"
+        android:layout_height="39dp"
+        android:text="@string/button_start"
+        android:background="@drawable/round_button"
+        android:textColor="@color/main_BackGround"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textFontWeight="650"
+        />
+
+
+</LinearLayout>
