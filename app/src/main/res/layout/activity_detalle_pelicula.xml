@@ -8,52 +8,83 @@
     tools:context=".DetallePelicula"
     android:background="@color/main_BackGround">
 
+    <ImageView
+        android:id="@+id/pelicula_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        />
+
     <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ImageView
-    android:id="@+id/pelicula_imagen"
-    android:layout_width="414dp"
-    android:layout_height="270dp"
-    android:layout_gravity="center"
-        android:scaleType="fitXY"
-    android:src="@drawable/bonesheader" />
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:layout_marginTop="-5dp">
 
 
     <TextView
     android:id="@+id/nombre_pelicula"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="BONES"
     android:textColor="@color/boton_BackGround"
     android:textSize="25sp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="20dp" />
+    android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"/>
 
 
    <View
     android:id="@+id/divider2"
-    android:layout_width="230dp"
+    android:layout_width="270dp"
     android:layout_gravity="center"
     android:layout_height="3dp"
-    android:layout_marginTop="-15dp"
-    android:layout_marginRight="-90dp"
-    android:background="@color/boton_BackGround"/>
+    android:background="@color/boton_BackGround"
+       android:layout_marginTop="7dp"
+       android:layout_marginLeft="10dp"/>
 
-        <TextView
+
+    </LinearLayout>
+    <TextView
         android:id="@+id/pelicula_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/main_Letra"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
         android:textSize="14sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
-    </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/buyTickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:textColor="@color/main_BackGround"
+        android:layout_gravity="center"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="100dp"
+        android:text="Buy my ticket!"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/girsClaro"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Test Test"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/seatsLeft"
+        />
+</LinearLayout>
 
 </LinearLayout>

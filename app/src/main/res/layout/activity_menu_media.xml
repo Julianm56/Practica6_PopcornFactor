@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SERIES"
+        android:text="MOVIES"
         android:textColor="@color/boton_BackGround"
         android:textSize="20sp"
         android:layout_marginLeft="20dp"
@@ -39,40 +39,38 @@
         android:layout_weight="1"
         android:numColumns="3"></GridView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MOVIES"
-        android:textColor="@color/boton_BackGround"
-        android:textSize="20sp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="-13dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textStyle="bold"/>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="MOVIES"-->
+<!--        android:textColor="@color/boton_BackGround"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginLeft="310dp"-->
+<!--        android:layout_marginTop="-13dp"-->
+<!--        android:fontFamily="sans-serif-condensed-medium"-->
+<!--        android:textStyle="bold"/>-->
 
 
-    <View
-        android:layout_width="400dp"
-        android:layout_gravity="center"
-        android:layout_height="3dp"
-        android:layout_marginTop="-13dp"
-        android:layout_marginLeft="-105dp"
-        android:background="@color/boton_BackGround"/>
+<!--    <View-->
+<!--        android:layout_width="400dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_height="3dp"-->
+<!--        android:layout_marginTop="-13dp"-->
+<!--        android:layout_marginLeft="-105dp"-->
+<!--        android:background="@color/boton_BackGround"/>-->
 
 
 
-    <GridView
-        android:id="@+id/gridviewPeliculas"
-        android:numColumns="3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="-9dp"
-        android:layout_marginRight="-9dp"
-        android:layout_marginTop="18dp">
-
-
-    </GridView>
+<!--    <GridView-->
+<!--        android:id="@+id/gridviewPeliculas"-->
+<!--        android:numColumns="3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_marginLeft="-9dp"-->
+<!--        android:layout_marginRight="-9dp"-->
+<!--        android:layout_marginTop="18dp">-->
+<!--    </GridView>-->
 
 </LinearLayout>
