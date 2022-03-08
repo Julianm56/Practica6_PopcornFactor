@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_BackGround"
+    tools:context=".ConfirmationMovie">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titleConfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmation"
+            android:textColor="@color/boton_BackGround"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/boton_BackGround"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="32dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/movie_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Movie: "
+        android:textColor="@color/girsClaro"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/selected_seat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected seat: "
+        android:textColor="@color/girsClaro"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        />
+
+    <EditText
+        android:id="@+id/Client_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textColor="@color/girsClaro"
+        android:hint="Your Name"
+        android:inputType="text"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/boton_BackGround"
+        android:textColorHint="@color/girsClaro"
+        />
+
+    <Button
+        android:id="@+id/btn_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/main_BackGround"
+        android:background="@drawable/round_button"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="40dp"
+        android:text="Buy my ticket!"
+        />
+
+
+
+
+</LinearLayout>

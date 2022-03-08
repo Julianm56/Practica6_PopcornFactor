@@ -41,9 +41,8 @@ class DetallePelicula : AppCompatActivity() {
                 button_pelicula.setOnClickListener{
                     var intent: Intent = Intent(this, SeatSelection::class.java)
 
-
                     intent.putExtra("id", id)
-                    intent.putExtra("nombre", title)
+                    intent.putExtra("name", title)
                     startActivity(intent)
                 }
             }

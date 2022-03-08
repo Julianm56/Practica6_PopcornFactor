@@ -1,5 +1,7 @@
 package pimienta.julian.popcornfactory
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,28 +10,38 @@ import android.widget.TextView
 import android.widget.Toast
 
 class SeatSelection : AppCompatActivity() {
+
+    private var selectedSeat = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seat_selection)
 
-        val title: TextView = findViewById(R.id.titleSeats) as TextView
+        val title = findViewById<TextView>(R.id.titleSeats)
         var posMovie = -1
+        selectedSeat = -1
 
         val bundle = intent.extras
 
         if (bundle != null) {
-            title.setText(bundle.getString("name"))
+            title.text = bundle.getString("name")
             posMovie = bundle.getInt("id")
 
         }
-        val confirm: Button = findViewById(R.id.confirm) as Button
+        val confirm: Button = findViewById<Button>(R.id.confirm)
 
         confirm.setOnClickListener {
-            //TODO añadir Lógica para reservar el Lugar seleccionado por el usuario salus
-            //TODO logia de not avaiable and fix seat selection title disappering
-            //Hacer una nueva actividad donde se vea el resumen de la copra es decir que se agregue el nombre del cliente y se vea el asiento que se selecciond.
 
-            Toast.makeText(this, "Enjoy the movie! :D ", Toast.LENGTH_LONG).show()
+            if (selectedSeat == -1) {
+                Toast.makeText(this, "Please select a seat to continue.", Toast.LENGTH_LONG).show()
+            } else {
+                val intent: Intent = Intent(this, ConfirmationMovie::class.java)
+
+                intent.putExtra("seatNumber", selectedSeat)
+                intent.putExtra("titlemovie",title.text)
+
+                this.startActivityForResult(intent, 1)
+            }
 
 
         }
@@ -48,6 +60,7 @@ class SeatSelection : AppCompatActivity() {
                 row4.clearCheck()
 
                 row1.check(checkedId)
+                selectedSeat = checkedId
             }
 
         }
@@ -60,6 +73,7 @@ class SeatSelection : AppCompatActivity() {
                 row4.clearCheck()
 
                 row2.check(checkedId)
+                selectedSeat = checkedId
             }
 
         }
@@ -72,6 +86,7 @@ class SeatSelection : AppCompatActivity() {
                 row4.clearCheck()
 
                 row3.check(checkedId)
+                selectedSeat = checkedId
             }
 
         }
@@ -84,8 +99,52 @@ class SeatSelection : AppCompatActivity() {
                 row1.clearCheck()
 
                 row4.check(checkedId)
+                selectedSeat = checkedId
             }
 
         }
     }
+
+
+    override fun onActivityResult(request: Int, result: Int, data: Intent?) {
+        val row1: RadioGroup = findViewById(R.id.row1)
+        val row2: RadioGroup = findViewById(R.id.row2)
+        val row3: RadioGroup = findViewById(R.id.row3)
+        val row4: RadioGroup = findViewById(R.id.row4)
+
+        super.onActivityResult(request, result, data)
+
+        if (request == 1) {
+
+            if (result == Activity.RESULT_OK) {
+                if (data != null) {
+                    var bundle = data.extras
+
+                    if (bundle != null) {
+                        var seat = bundle.getInt("seatReserved")
+
+                        if (seat <= 5) {
+                            row1.getChildAt(seat - 1).setBackgroundResource(R.drawable.radio_disabled)
+                            row1.getChildAt(seat - 1).isEnabled = false
+                        } else if (seat <= 10) {
+                            row2.getChildAt(seat - 6).setBackgroundResource(R.drawable.radio_disabled)
+                            row2.getChildAt(seat - 6).isEnabled = false
+                        } else if (seat <= 15) {
+                            row3.getChildAt(seat - 11).setBackgroundResource(R.drawable.radio_disabled)
+                            row3.getChildAt(seat - 11).isEnabled = false
+                        } else {
+                            row4.getChildAt(seat - 16).setBackgroundResource(R.drawable.radio_disabled)
+                            row4.getChildAt(seat - 16).isEnabled = false
+                        }
+                    }
+                    row1.clearCheck()
+                    row2.clearCheck()
+                    row3.clearCheck()
+                    row4.clearCheck()
+                    selectedSeat = -1
+                }
+            }
+        }
+    }
+
 }
